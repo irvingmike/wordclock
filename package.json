@@ -21,7 +21,8 @@
     "gulp": "3.9.1"
   },
   "dependencies": {
-    "angular": "1.6.4"
+    "angular": "1.6.4",
+    "angular-resource": "1.6.4"
   },
   "eslintConfig": {
     "env": {
