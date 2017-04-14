@@ -1,0 +1,14 @@
+# npm
+node_modules
+
+# templateCache
+src/templates.js
+
+# Gulp Generated
+/src/common/constants/gulp-generated
+
+# Environment build output
+dist
+
+# Vendor Code
+app/vendor

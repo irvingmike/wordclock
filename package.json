@@ -1,0 +1,33 @@
+{
+  "name": "wordclock",
+  "version": "1.0.0",
+  "description": "Making a web work clock for fun and practive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irvingmike/wordclock.git"
+  },
+  "author": "Aaron Anderson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irvingmike/wordclock/issues"
+  },
+  "homepage": "https://github.com/irvingmike/wordclock#readme",
+  "devDependencies": {
+    "eslint": "3.19.0",
+    "gulp": "3.9.1"
+  },
+  "dependencies": {
+    "angular": "1.6.4"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "extends": "eslint:recommended"
+  }
+}

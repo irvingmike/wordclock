@@ -1,0 +1,16 @@
+body {
+	position: relative;
+}
+
+section.mainSection {
+	height: 90vmin;
+	width: 90vmin;
+	background-color: aqua;
+	margin: 5vmin auto auto auto;
+}
+
+div.letterHolder {
+	width: 8.1818181818vmin;
+	height: 8.1818181818vmin;
+	background-color: brown;
+}
