@@ -52,6 +52,23 @@ app.controller('WordClockController', function($scope) {
     }
   };
 
+  $scope.wordMap = {
+    'its': ['00', '01', '02']
+    , 'a': ['04']
+    , 'half': ['06', '07', '08', '09']
+    , 'ten': ['11', '12', '13']
+    , 'quarter': ['14', '15', '16', '17', '18', '19', '1a']
+    , 'twenty': ['20', '21', '22', '23', '24', '25']
+    , 'five': ['27', '28', '29', '2a']
+    , 'way': ['30', '31', '32']
+    , 'til': ['33', '34', '35']
+    , 'past': ['36', '37', '38', '39']
+    , 'seven': ['41', '42', '43', '44', '45']
+    , 'noon': ['47', '48', '49', '4a']
+  }
+
+  initializeClock();
+
 });
 
 app.directive('wordClock', function() {
@@ -67,3 +84,7 @@ app.directive('wordClockSection', function() {
     , templateUrl: "app/wordClockSection.html"
   }
 });
+
+function initializeClock() {
+
+}
