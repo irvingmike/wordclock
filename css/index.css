@@ -50,6 +50,6 @@ div.wordClockSection > div {
 	width: 100%;
 }
 
-div.wordClockSection.active {
+div.wordClockSection .active {
 	color: red;
 }
