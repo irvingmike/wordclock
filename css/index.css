@@ -37,7 +37,7 @@ div.wordClockSection {
 	justify-content: center;
 	align-content: center;
 
-	color: dimgrey;
+	color: #333;
 	text-align: center;
 	text-transform: capitalize;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,6 +50,6 @@ div.wordClockSection > div {
 	width: 100%;
 }
 
-div.wordClockSection .active {
+div.wordClockSection.active {
 	color: red;
 }
