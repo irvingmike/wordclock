@@ -138,6 +138,7 @@ function checkTime($scope) {
       newDisplay.push.apply(newDisplay, $scope.clock.wordMap.past);
       break;
     case (minutes < 18):
+      newDisplay.push.apply(newDisplay, $scope.clock.wordMap.a);
       newDisplay.push.apply(newDisplay, $scope.clock.wordMap.quarterPos);
       newDisplay.push.apply(newDisplay, $scope.clock.wordMap.past);
       break;
@@ -166,6 +167,7 @@ function checkTime($scope) {
       hours++;
       break;
     case (minutes < 48):
+      newDisplay.push.apply(newDisplay, $scope.clock.wordMap.a);
       newDisplay.push.apply(newDisplay, $scope.clock.wordMap.quarterPos);
       newDisplay.push.apply(newDisplay, $scope.clock.wordMap.til);
       hours++;
