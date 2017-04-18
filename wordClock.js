@@ -8,7 +8,7 @@ let app = angular.module('WordClock', []);
 
 const debugActive = false;
 
-app.controller('WordClockController', function($scope, $interval, $timeout) {
+app.controller('WordClockController', function($scope, $interval, $timeout, $window) {
 
   $scope.clock = {
     text: {
@@ -103,7 +103,12 @@ app.controller('WordClockController', function($scope, $interval, $timeout) {
 
   $timeout(function() {
     highlightWords($scope);
+    doToAllSections($scope, scaleText)
   }, 100);
+
+  angular.element($window).bind('resize', function() {
+    doToAllSections($scope, scaleText);
+  });
 
 })
 .directive('wordClock', function() {
@@ -118,6 +123,17 @@ app.controller('WordClockController', function($scope, $interval, $timeout) {
     , template: "<div class='wordClockSection' id='{{ rowkey }}{{ itemkey }}'>{{ item }}</div>"
   }
 });
+
+function doToAllSections($scope, suppliedFunc) {
+  for (let y = 0; y < $scope.clock.settings.height; y++) {
+    for (let x = 0; x < $scope.clock.settings.width; x++) {
+      let id = (y === 10) ? 'a' : y.toString();
+      id += (x === 10) ? 'a' : x.toString();
+      suppliedFunc($scope, id);
+    }
+  }
+
+}
 
 function checkTime($scope) {
   debug('*** Checking Time ***');
@@ -222,7 +238,7 @@ function checkTime($scope) {
 
 function highlightWords($scope) {
   debug("*** Highlighting new words ***");
-  clearActiveClass($scope);
+  doToAllSections($scope, clearActiveClass);
   for (let id of $scope.clock.currentDisplay) {
     try {
       let elementClassList = document.getElementById(id).classList.add('active');
@@ -231,19 +247,16 @@ function highlightWords($scope) {
   debug($scope.clock.currentDisplay);
 }
 
-function clearActiveClass($scope) {
-  for (let y = 0; y < $scope.clock.settings.height; y++) {
-    for (let x = 0; x < $scope.clock.settings.width; x++) {
+function clearActiveClass($scope, id) {
+  try {
+    document.getElementById(id).classList.remove('active');
+  } catch(err) { debug(err); }
+}
 
-      let id = (y === 10) ? 'a' : y.toString();
-      id += (x === 10) ? 'a' : x.toString();
-      try {
-        document.getElementById(id).classList.remove('active');
-      } catch(err) {
-        // debug(err);
-      }
-    }
-  }
+function scaleText($scope, id) {
+  let element = document.getElementById(id);
+  //let fontSize = element.offsetWidth * .5;
+  element.style.fontSize = (element.offsetWidth * .4) + 'px';
 }
 
 function debug(error) {

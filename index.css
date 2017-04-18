@@ -5,7 +5,7 @@ body {
 section.mainSection {
 	height: 90vmin;
 	width: 90vmin;
-	background-color: aqua;
+	background-color: red;
 	margin: 5vmin auto auto auto;
 }
 
@@ -14,10 +14,10 @@ section.mainSection {
 /* TODO: move this to it's own file */
 div[ng-app=WordClock] {
 	height: 100%;
+	background-color: black;
 }
 
 word-clock {
-	background-color: blueviolet;
 	height: 100%;
 }
 
@@ -27,7 +27,7 @@ div.wordClockRow {
 }
 
 div.wordClockSection {
-	background-color: #000;
+	background-color: transparent;
 	width: 9.090909090909%;
 	height: 100%;
 
@@ -51,5 +51,5 @@ div.wordClockSection > div {
 }
 
 div.wordClockSection.active {
-	color: red;
+	color: yellow;
 }
